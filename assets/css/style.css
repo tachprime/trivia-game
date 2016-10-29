@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+body {
+    background-image: url('../images/Transformersbg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Audiowide', cursive;
+}
+
+header {
+    background-color: rgba(221, 32, 32, 0.75);
+}
+
+h1 {
+    font-size: 3.4em;
+    -webkit-text-fill-color: red;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 2px;;
+}
+
+.center {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+}
+
+.startSection {
+    position: relative;
+    top: 150px;
+    visibility: visible;
+}
+
+#startBtn {
+    width: 200px;
+    height: 100px;
+    font-size: 4em;
+}
+
+.timerSection{
+    background-color: lightgray;
+}
+
+.panel {
+    background-color: red;
+    font-size: 1.5em;
+}
+
+#answers div:nth-child(even) {
+    background-color: lightgray;
+}
+
+#answers div:hover {
+    background-color: blue;
+}
+
+#results {
+    float:left;
+    position: relative;
+    border: 10px solid #959090;
+    background-color: greenyellow;
+    margin: auto;
+    margin-top: 100px;
+    padding: 10px;
+    width: 100%; 
+}

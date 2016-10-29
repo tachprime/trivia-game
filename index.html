@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Transformers themed trivia game">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transformers Trivia</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="center"><h1>Trivia that <br> More Than Meets The Eye</h1></header>
+      
+    <div class="container center">
+        <div class="startSection">
+            <button class="btn btn-success" id="startBtn">Start</button>
+        </div>
+        
+       <section class="row col-md-10 gameSection center"> 
+        <div class="timerSection"><h2>Time Remaining: <span id="timer"></span></h2></div>
+        <div class="panel panel-default">
+           <div class="questionSection panel-heading panel-title" id="question"></div>
+           <div class="answersSection panel-body" id="answers"></div>
+        </div> 
+       </section>
+       
+       <div id="results"></div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
