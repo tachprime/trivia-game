@@ -35,10 +35,11 @@ h1 {
     width: 200px;
     height: 100px;
     font-size: 4em;
+    box-shadow: -2px 5px 1px black;
 }
 
 .timerSection{
-    background-color: lightgray;
+    background-color: red;
 }
 
 .panel {
@@ -46,21 +47,39 @@ h1 {
     font-size: 1.5em;
 }
 
-#answers div:nth-child(even) {
+#question {
+    border: 10px solid red;
+    border-bottom: 20px solid lightgray;
+    background-color: aqua;
+}
+
+#answers {
+    width: 50%;
+    background-color: lightgray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#ansers div {
     background-color: lightgray;
 }
 
+#answers div:nth-child(even) {
+    box-shadow: 0px 1px 1px black;
+}
+
 #answers div:hover {
-    background-color: blue;
+    background-color: #fff;
+    font-size: 1.5em;
 }
 
 #results {
-    float:left;
-    position: relative;
-    border: 10px solid #959090;
     background-color: greenyellow;
+    border: 10px solid rgba(149, 144, 144, 0.84);
+    color: rebeccapurple;
     margin: auto;
     margin-top: 100px;
-    padding: 10px;
+    padding: 20px;
+    position: relative;
     width: 100%; 
 }

@@ -7,18 +7,19 @@ var Game = {
     counter: 0,
     //to track what question we are on
     questionNumber: 0,
+    //track trivia stats
     rightChoice: 0,
     wrongChoice: 0,
     noChoice: 0,
     
     //game functions
-    //---------------------------------
+    //------------------------------------------------------------------
     countDown: function () {
         Game.timer--;
         Game.showTimer();
         Game.checkForTime();
     },
-    //checks to see if user has anythime left if not move on to next ?
+    //checks to see if user has anytime left if not move on to next ?
     checkForTime: function () {
         if (this.timer <= 0) {
             Game.noChoice++;
@@ -59,7 +60,6 @@ var TriviaQuestion = {
     images: ["assets/images/transf_logo.gif"],
 };
 
-
 function setTriviaQuestions() {
     TriviaQuestion.question = setQuestion();
     TriviaQuestion.answerChoices = setAnswerChoices();
@@ -70,7 +70,13 @@ function setQuestion() {
     let question =
         [
             "Who is the Leader of the Autobots?",
-            "Which is an actual Transformer name?"
+            "Which is an actual Transformer name?",
+            "Which of these is not a Transformer",
+            "What is another alias for Optimus Prime",
+            "Megatron is later transformed into which villain",
+            "What is the name of the evil version of Optimus",
+            "Who is the creator of the Transformers",
+            "Who is the leader of the Dinobots"
         ]
     
     return question;
@@ -80,7 +86,13 @@ function setCorrectAnswer() {
     let correctAnswer =
         [
             "Optimus Prime",
-            "Jazz"
+            "Jazz",
+            "Ontronicon",
+            "Convoy",
+            "Galvatron",
+            "Nemesis Prime",
+            "The Quintessons",
+            "Grimlock"
         ]
     
     return correctAnswer;
@@ -100,6 +112,42 @@ function setAnswerChoices() {
                 "Harmony",
                 "Jazz",
                 "Disco-inferno"
+            ],
+            [
+                "Trypticon",
+                "Ontronicon",
+                "Metroplex",
+                "Omega Supreme"
+            ],
+            [
+                "Convoy",
+                "Zeta Prime",
+                "Automus",
+                "Big Red"
+            ],
+            [
+                "Shockwave",
+                "Galvatron",
+                "Quintesson",
+                "Devestator"
+            ],
+            [
+                "Dark Convoy",
+                "Rodimus Prime",
+                "Omega Prime",
+                "Nemesis Prime"
+            ],
+            [
+                "The Quintessons",
+                "Unicron",
+                "Primus",
+                "Alpha Trion"
+            ],
+            [
+                "Slag",
+                "Snarl",
+                "Grimlock",
+                "Swoop"
             ]
         ]
     
@@ -137,6 +185,8 @@ function reset() {
 //for when Game is over
 function showRestartBtn() {
     var restartBtn = $('<button>');
+    restartBtn.addClass("btn btn-danger");
+    restartBtn.css('box-shadow', '-2px 5px 1px black');
     restartBtn.text("Restart");
     restartBtn.attr('id', "restartBtn");
     $('#results').append(restartBtn);
@@ -148,11 +198,10 @@ function showRestartBtn() {
 
 //for when Game is over
 function showFinalResults() {
-    $('#results').show();
     let numCorrect = Game.rightChoice,
         numWrong = Game.wrongChoice,
         unAnswered = Game.noChoice;
-    //hide game Section
+    $('#results').show();
     $('.gameSection').hide();
     $('#results').html('<h2>The End</h2>');
     $('#results').append('<h3>Correct: '+ numCorrect +'</h3>');
@@ -162,6 +211,7 @@ function showFinalResults() {
     showRestartBtn();
 }
 
+//for when question is answered or Time is up
 function showResult(result) {
     if(soundFx != null){
         soundFx.play();
@@ -178,7 +228,7 @@ function continueGame() {
          Game.nextQuestion();
     } else {
         Game.stopTimer();
-        setTimeout(showFinalResults, 1500);
+        setTimeout(showFinalResults, 2000);
     }  
 }
 
@@ -225,7 +275,6 @@ function playGame() {
     }
     getUserChoice();
 }
-
 
 $(document).ready(function() {
     $('.gameSection').hide();
